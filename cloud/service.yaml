@@ -1,0 +1,9 @@
+service:
+  name: retrieval-systems-lab
+  runtime: python310
+  command: python -c "from retrieval_lab.api import serve; serve()"
+  health_check: /health
+  environment:
+    RETRIEVAL_PORT: 8080
+    RETRIEVAL_METHOD: hybrid
+    RETRIEVAL_TOP_K: 5
